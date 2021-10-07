@@ -1,6 +1,6 @@
 package basic.human1;
 
-import basic.human1.Human;
+
 
 //Humanクラスをデータとして利用するクラス
 class HumanSample {
