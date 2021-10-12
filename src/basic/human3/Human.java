@@ -10,6 +10,6 @@ class Human {
     }
 
     public void sayHello() {  //自分のフィールドで実行している
-        System.out.println("Hello.I'm" + name+ ".");
-    }
+        System.out.println("Hello.I'm" + name+ ".");//渡して、そのまま完結するメソッド。何も返してもらわない
+    }//消費型
 }

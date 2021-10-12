@@ -7,9 +7,8 @@ class Cat  extends Animal {
     private double weight;
 //コンストラクタ
 
-    public Cat(String name, int age, double weight) {
-        this.toy=toy;
-        this.eat= eat;
+    public Cat( String name, int age, double weight) {
+        super("かわいいねこ","さば");
         this.name = name;
         this.age = age;
         this.weight = weight;
@@ -17,9 +16,6 @@ class Cat  extends Animal {
 
     }
 
-    public Cat(String eat, String toy) {
-        super(eat, toy);
-    }
 //getter
 
     public String getName() {
@@ -36,7 +32,8 @@ class Cat  extends Animal {
 
     @Override
     public String toString() {
-        System.out.println(name+"です.体重は"+weight+"で、年齢は"+age+"です");
+        System.out.println(name + "です.体重は" + weight + "で、年齢は" + age + "です");
+        return null;
     }
 }
 

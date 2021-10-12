@@ -13,6 +13,7 @@ class FigureSample {
 
 for (Figure f:figures){ //for (int num:array) 参照した値を入れる変数宣言：配列名
     System.out.println(f);
+    System.out.println(f.getArea());
 }
 
     }
