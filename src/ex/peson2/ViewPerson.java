@@ -3,7 +3,6 @@ package ex.peson2;
 //課題１　各地域の平均年齢
 //課題２　男女別の平均年齢
 import basic.sample.enumsample.Gender;
-import ex.peson2.Birthplace;
 
 import java.util.*;
 
@@ -67,46 +66,59 @@ public class ViewPerson {
         }
 
         //課題２
-    for (Map.Entry entry: listMap.entrySet()){
-        double menSum=0,woSum=0;
-
-        for (Person person:(List<Person>)entry.getValue()){
-            if (person.getGender().equals(Gender.MEN)){
-                menSum+= person.getAge();
-            }else {
-                woSum+= person.getAge();
-            }
-
-            double menAve=menSum/((List<?>) entry.getValue()).size();
-            double woAve =woSum/((List<?>) entry.getValue()).size();
-            System.out.println("\n MEN AVE "+menAve);
-            System.out.println("\n WOMEN AVE "+woAve);
-        }
-
-    }
-
-
 
     //キーと値を取り出す
         for (Map.Entry entry : listMap.entrySet()){
             //System.out.println(entry.getValue()+"Value");
-            double menSum=0,woSum=0;
+            double menSum=0,woSum=0,mCun=0,wCum=0;
 
             for (Person person : (List<Person>)entry.getValue()) {
 
 
-                if (entry.getValue().equals(Gender.MEN)) {
+                if (person.getGender().equals(Gender.MEN)) {
                     menSum += person.getAge();
+                    mCun++;
                 } else {
                     woSum += person.getAge();
+                    wCum++;
                 }
             }
-            double menAve=menSum/((List<?>) entry.getValue()).size();
-            double woAve =woSum/((List<?>) entry.getValue()).size();
+
+            double menAve=menSum/mCun;
+            double woAve =woSum/wCum;
+            System.out.println(entry.getKey());
+            //列挙型がlistMapのKeyになっているので、地域名が表示される
             System.out.println("\n MEN AVE "+menAve);
             System.out.println("\n WOMEN AVE "+woAve);
             }
+
+        //MapのKeyに、地域名が設定されている！！
+
+        //平均年齢の算出
+        System.out.println("平均年齢");
+        for (Map.Entry entry:listMap.entrySet()) {
+            double sum= 0,cnt = 0,sumMen = 0,sumWomen = 0,menCnt = 0,womenCnt = 0;
+            for (Person person:(List<Person>)entry.getValue()) {
+                sum += person.getAge();
+                cnt++;
+                if (person.getGender().equals(Gender.MEN)) {
+                    sumMen += person.getAge();
+                    menCnt++;
+                } else {
+                    sumWomen += person.getAge();
+                    womenCnt++;
+                }
+            }
+            System.out.println("地域");
+            System.out.println(String.format("全体平均:%.1f歳", sum/ cnt));
+            System.out.println(String.format("男性平均:%.1f歳",(sumMen / womenCnt)));
+            System.out.println(String.format("女性平均:%.1f歳",(sumWomen / womenCnt)));
         }
+
+
+
+
+    }
 
     }
 
