@@ -1,5 +1,7 @@
 package myEx.bunpo;
 
+import java.util.Scanner;
+
 class Bunpo {
     private String name;
     private Classwake classwake;
@@ -47,4 +49,10 @@ class Bunpo {
         return String.format("\n\n文法：　%s  \n分類：　%s %s \n用途：　%s   \n注意:　%s \n \n例文：\n　%s",
                 name,classwake.getJpName(),classWake2.getJpName(),use,attention,ex);
     }
+
+   public String inputString() {
+        Scanner scanner =new Scanner(System.in);
+        return  scanner.nextLine();
+    }
+
 }
