@@ -9,8 +9,13 @@ public enum ClassWake2{
         CLASSES("クラス"),
         RAP("ラッパー"),
         METHODS("メソッド"),
-        NONE("なし"),
-        OTHER("その他");
+        NONE(" "),
+        OTHER("その他"),
+        COLLECTION("コレクションフレームワーク"),
+        STRING("文字列"),
+        MATH("数値演算");
+
+
 
 public String jpName;
 

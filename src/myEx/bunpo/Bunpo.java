@@ -6,13 +6,16 @@ class Bunpo {
     private ClassWake2 classWake2;
     private String use;
     private String attention;
+    private String ex;
 
-    public Bunpo(String name, Classwake classwake, ClassWake2 classWake2, String use, String attention) {
+
+    public Bunpo(String name, Classwake classwake, ClassWake2 classWake2, String use, String attention,String ex) {
         this.name = name;
         this.classwake = classwake;
         this.classWake2 = classWake2;
         this.use = use;
         this.attention = attention;
+        this.ex= ex;
     }
 
     public String getName() {
@@ -35,9 +38,13 @@ class Bunpo {
         return attention;
     }
 
+    public String getEx() {
+        return ex;
+    }
+
     @Override
     public String toString() {
-        return String.format("文法：　%s  \n分類：　%s %s \n用途：　%s   \n注意:　%s",
-                name,classwake.getJpName(),classWake2.getJpName(),use,attention);
+        return String.format("\n\n文法：　%s  \n分類：　%s %s \n用途：　%s   \n注意:　%s \n \n例文：\n　%s",
+                name,classwake.getJpName(),classWake2.getJpName(),use,attention,ex);
     }
 }
