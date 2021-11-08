@@ -3,7 +3,7 @@ package ex.dates;
 import java.util.Calendar;
 import java.util.Date;
 
-public class DateSample {
+class DateSample {
     public static void main(String[] args) {
         //現在時刻でDateクラスのインスタンスを生成
         //＝＝引数なしでコンストラクタを呼び出す
@@ -77,6 +77,24 @@ public class DateSample {
         //⇒月の減算（－12か月）：　Mon May 04 04:44:44 JST 4443
 
 
+
+        //相互変換
+        //calendar→Date .getTime()
+        Calendar calendar3 =Calendar.getInstance();
+        Date date =calendar3.getTime();
+            //Dateクラスのインスタンスを返す＝＝文字列
+        System.out.println("\n現在時刻String: "+date);
+
+        //calendar→Date .getTimeInMillis()
+        Date date2 = new Date(calendar3.getTimeInMillis());
+            //時刻をlongで扱える
+        System.out.println(date2);
+
+        //Date→calendar .setTime()
+        //Dateクラスのインスタンスを引数として、calendarクラスのコンストラクタに渡す
+        Date date3 =new Date();
+        calendar3.setTime(date3);
+        System.out.println("\n現在時刻数値: "+date3);
 
     }
 }
