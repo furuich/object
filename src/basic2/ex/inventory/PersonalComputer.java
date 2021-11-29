@@ -1,5 +1,7 @@
 package basic2.ex.inventory;
 
+//ここの型に注意。
+//enum型だと、Constant　constant　になるが、これはint、Stringで良い
 class PersonalComputer {
     //PC情報
     private String userName;
