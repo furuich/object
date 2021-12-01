@@ -18,7 +18,7 @@ class ViewStock implements Constants{
                 new PersonalCompurter("わだ",5,2,30_000,Constants.BIT_32,Constants.WIN_10),
                 new PersonalCompurter("くどう",6,2,150_000,Constants.BIT_64,Constants.MAC),
                 new PersonalCompurter("さらど",7,3,40_000,Constants.BIT_32,Constants.WIN_10),
-                new PersonalCompurter("あいざわ",8,3,700_000,Constants.BIT_32,Constants.MAC)
+                new PersonalCompurter("あいざわ",8,3,700_000,Constants.BIT_32,Constants.MAC)//リテラルじゃなくて変数名で定数を記述
         ));
         //p.get～()で各フィールドを表示できる
         for (PersonalCompurter p :pcList){
@@ -28,7 +28,7 @@ class ViewStock implements Constants{
         //目的→倉庫番号で金額を出したい
 
         //1.初期化（型の宣言に注意）
-        //キー→倉庫番号==integer　値→ArrayList（priceが目当て）
+        //キー→倉庫番号==integer　値→ArrayList（priceが目当て）　にマッピングしたい
         Map<Integer ,ArrayList<Integer>> storagePriceMap = new HashMap<>();
 
             //for文でMapに代入
@@ -37,7 +37,9 @@ class ViewStock implements Constants{
 
             if (!storagePriceMap.containsKey(storageNo)){  //Mapに倉庫番号がふくまれているかどうか//同じキーがあったら、Mapに追加しないようにする
                 storagePriceMap.put(storageNo, new ArrayList<>()); //キーに倉庫番号、 値に空のListを作成する
-            }
+                    //keyが入るたびに、対応する値を入れるArrayListがnewされる文
+                    //keyを重複させないために、存在するかif文で書く
+                }
         storagePriceMap.get(storageNo).add(p.getPrice());
             //Mapに代入したキーに対応した値（ArrayList構造だからadd）を追加する
         }
@@ -64,8 +66,8 @@ class ViewStock implements Constants{
         //Map｛for文でキー→storage番号　に対応した値→新しいListを作成
         //同じキーが存在するので、上書きさせないためにifぶんで振り分ける。
         // 違うNo（キー）がでたら、それに対応したArrayList（値を作成）
-        //
 
+        
 
 
     }
